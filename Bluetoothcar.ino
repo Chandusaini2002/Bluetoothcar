@@ -1,15 +1,17 @@
 char val = 0;
-int LED = 13;
-int  M1 = 12;
-int M2 = 11;
-int  M3 = 10;
-int  M4 = 9;
+int white_led = 3;
+int red_led = 2;
+int  M1 = 7;
+int  M2 = 6;
+int  M3 = 5;
+int  M4 = 4;
 
 void setup ()
 {
     Serial.begin(9600);
     
-    pinMode(LED ,OUTPUT);
+    pinMode(white_led ,OUTPUT);
+    pinMode(red_led ,OUTPUT);
     pinMode(M1 ,OUTPUT);
     pinMode(M2 ,OUTPUT);
     pinMode(M3 ,OUTPUT);
@@ -25,52 +27,61 @@ void loop()
         Serial.print("\n");
     }
     
-    if (val == 'A')
+    if (val == 'F')
     {
         digitalWrite(M1, HIGH);
         digitalWrite(M2, LOW);
         digitalWrite(M3, HIGH);
         digitalWrite(M4, LOW);
+        digitalWrite(white_led,HIGH);
+        digitalWrite(red_led,LOW);
         
     }
     
-    if (val == 'B')
+    if (val == 'R')
     {
-       digitalWrite(M1, LOW);
+        digitalWrite(M1, LOW);
         digitalWrite(M2, HIGH);
         digitalWrite(M3, HIGH);
         digitalWrite(M4, LOW); 
+        digitalWrite(white_led,HIGH);
+        digitalWrite(red_led,HIGH);
     }
     
-    if (val =='C')
+    if (val =='B')
     {
         digitalWrite(M1, LOW);
         digitalWrite(M2, HIGH);
         digitalWrite(M3, LOW);
         digitalWrite(M4, HIGH);
+        digitalWrite(white_led,LOW);
+        digitalWrite(red_led,HIGH);
     }
     
-    if (val == 'D')
+    if (val == 'L')
     {
         digitalWrite(M1, HIGH);
         digitalWrite(M2, LOW);
         digitalWrite(M3, LOW);
         digitalWrite(M4, HIGH);
+        digitalWrite(white_led,HIGH);
+        digitalWrite(red_led,HIGH);
     }
     
     if (val == 'E')
     {
-        digitalWrite(LED, HIGH);
+      //  digitalWrite(LED, HIGH);
         
     }
     
-    else if (val == 'O')
+    else if (val == 'S')
     {
         digitalWrite(M1, LOW);
         digitalWrite(M2, LOW);
         digitalWrite(M3, LOW);
         digitalWrite(M4, LOW);
-        digitalWrite(LED, LOW);
+        digitalWrite(white_led, LOW);
+        digital write(red_led ,HIGH);
         
     }
 }
