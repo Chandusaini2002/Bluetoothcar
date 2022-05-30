@@ -1,4 +1,5 @@
 char val = 0;
+int bazar = 8;
 int white_led = 3;
 int red_led = 2;
 int  M1 = 7;
@@ -9,7 +10,7 @@ int  M4 = 4;
 void setup ()
 {
     Serial.begin(9600);
-    
+    pinMode(bazar ,OUTPUT);
     pinMode(white_led ,OUTPUT);
     pinMode(red_led ,OUTPUT);
     pinMode(M1 ,OUTPUT);
@@ -68,9 +69,9 @@ void loop()
         digitalWrite(red_led,HIGH);
     }
     
-    if (val == 'E')
+    if (val == 'z')
     {
-      //  digitalWrite(LED, HIGH);
+        digitalWrite(bazar, HIGH);
         
     }
     
@@ -82,6 +83,8 @@ void loop()
         digitalWrite(M4, LOW);
         digitalWrite(white_led, LOW);
         digitalWrite(red_led ,HIGH);
+        digitalWrite(bazar, LOW);
+
         
     }
 }
