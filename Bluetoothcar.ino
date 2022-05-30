@@ -81,7 +81,7 @@ void loop()
         digitalWrite(M3, LOW);
         digitalWrite(M4, LOW);
         digitalWrite(white_led, LOW);
-        digital write(red_led ,HIGH);
+        digitalWrite(red_led ,HIGH);
         
     }
 }
