@@ -1,5 +1,5 @@
 char val = 0;
-int bazar = 8;
+int bazar = 10;
 int forntled = 3;
 int backled = 2;
 int rightled = 8;
